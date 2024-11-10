@@ -28,7 +28,22 @@
             //!MODIFY
             "programBinary": "target/thumbv7m-none-eabi/debug/nucleo",
             //!MODIFY
-            "svdFile": "stm32f103.svd"
+            "svdFile": "stm32f103.svd",
+            "rttEnabled": true,
+            "rttChannelFormats": [
+              {
+                "channelNumber": 0,
+                // Format RTT data as String data
+                "dataFormat": "String",
+                // Include host-side timestamps for every line of data transferred from the target RTT output
+                "showTimestamps": true
+              },
+              {
+                "channelNumber": 1,
+                // Treat data as raw binary data, and do not format in any way
+                "dataFormat": "BinaryLE"
+              }
+            ]
           }
         ],
         "env": {
